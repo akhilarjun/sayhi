@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Hi!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>ROOM_ID = "<%= roomID %>";</script>
+</head>
+<body>
+    <div class="brand">Say Hi!</div>
+    <div class="container error" id='errorHolder' style="display: none;"></div>
+    <div class="container" id="videoHolder">
+    </div>
+
+    <!-- SCRIPTS -->
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="js/sayhi.js" defer></script>
+</body>
+</html>

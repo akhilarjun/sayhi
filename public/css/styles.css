@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #efefef;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body .brand {
+  color: #dddddd;
+  font-weight: bold;
+  font-size: 200px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+}
+
+body .container {
+  max-width: 1200px;
+  margin: 250px auto 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .container#videoHolder {
+  border: 1px solid #c44;
+  margin-top: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (300px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 300px);
+  grid-auto-rows: 300px;
+}
+
+body .container.error {
+  padding: 10px;
+  background-color: #c44;
+  color: #fff;
+  font-weight: bold;
+}
+
+body .container video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=styles.css.map */

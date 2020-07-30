@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon server",
-    "start:prod": "node server",
-    "start:peer": "peerjs --port 3001",
-    "start:local": "run-p start:peer start:dev",
-    "start": "run-s start:peer start:prod"
+    "start": "node server"
   },
   "repository": {
     "type": "git",

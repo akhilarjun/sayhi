@@ -26,8 +26,6 @@ body .container {
 }
 
 body .container#videoHolder {
-  border: 1px solid #c44;
-  margin-top: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (300px)[auto-fill];
@@ -35,17 +33,12 @@ body .container#videoHolder {
   grid-auto-rows: 300px;
 }
 
-body .container.error {
-  padding: 10px;
-  background-color: #c44;
-  color: #fff;
-  font-weight: bold;
-}
-
 body .container video {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=styles.css.map */

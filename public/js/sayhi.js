@@ -1,8 +1,5 @@
 const socket = io('/');
-const myPeer = new Peer(undefined, {
-    host: '/',
-    port: '3001'
-});
+const myPeer = new Peer();
 const videoHolder = document.getElementById('videoHolder');
 
 // Setup your-video!
@@ -14,9 +11,7 @@ navigator.mediaDevices.getUserMedia({
 }).then(stream => {
     addVideoToStream(myVideo, stream);
 }).catch(err => {
-    const errHolder = document.getElementById('errorHolder');
-    errHolder.style.display = 'block';
-    errHolder.textContent = err;
+    console.error(err);
 });
 
 
@@ -29,7 +24,7 @@ navigator.mediaDevices.getUserMedia({
 function addVideoToStream(video, stream) {
     video.srcObject = stream;
     video.addEventListener('loadedmetadata', () => {
-        video.onplay();
+        video.play();
     });
     videoHolder.append(video);
 }

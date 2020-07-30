@@ -1,17 +1,17 @@
 const socketIo = require('socket.io');
 
-const init =  (server) => {
+const init = (server) => {
     const io = socketIo(server);
     io.on('connection', socket => {
         socket.on('join-room', (roomID, userID) => {
             console.log(roomID, userID);
             socket.join(roomID);
-            socket.to(roomID).broadcast('user-connected', userID);
+            socket.to(roomID).broadcast.emit('user-connected', userID);
             socket.on('disconnect', () => {
-                socket.to(roomID).broadcast('user-disconnected', userID);
+                socket.to(roomID).broadcast.emit('user-disconnected', userID);
             });
         });
     })
 }
 
-module.exports = {init};
+module.exports = { init };
